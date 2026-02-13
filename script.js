@@ -12,7 +12,7 @@ function rain() {
     // Random animation duration
     const duration = Math.random() * 2 + 1; // 1s to 3s
 
-    e.innerText = '❤️'; // Can be "winnie" if you want text, or a heart emoji
+    e.innerText = '❤️Winnie'; // Can be "winnie" if you want text, or a heart emoji
     e.style.left = left + 'px';
     e.style.fontSize = size + 'em';
     e.style.animation = `animate ${duration}s linear forwards`;
@@ -25,4 +25,5 @@ function rain() {
 
 // Generate drops every 50ms
 setInterval(rain, 50);
+
 
