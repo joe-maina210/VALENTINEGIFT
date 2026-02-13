@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --clr: rgb(255, 0, 174);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+.container {
+    position: relative;
+    top: 100px;
+    height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container .cloud {
+    position: relative;
+    width: 20%;
+    z-index: 100;
+    filter: drop-shadow(0 0 35px var(--clr));
+}
+
+.container .cloud h2 {
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: #000;
+    font-size: 1.5em;
+    z-index: 1000;
+    font-weight: 400;
+    padding: 0 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    background: var(--clr);
+}
+
+.container .cloud h2::before {
+    content: "";
+    position: absolute;
+    top: -115px;
+    left: 80%;
+    transform: translateX(-50%);
+    border-radius: 100px;
+    width: 120%;
+    height: 100px;
+    background: var(--clr);
+}
+
+.container .cloud h2::after {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    width: 120%;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 120px -30px 0 40px var(--clr);
+}
+
+.container .cloud .drop {
+    position: absolute;
+    top: 30px;
+    height: 100px;
+    line-height: 270px;
+    color: var(--clr);
+    transform-origin: bottom;
+    animation: animate 3s linear forwards;
+}
+
+@keyframes animate {
+    0% { transform: translateY(0) scaleY(0); transform-origin: top; }
+    10% { transform: translateY(0) scaleY(0.25); transform-origin: top; }
+    20% { transform: translateY(0) scaleY(1); }
+    70% { transform: translateY(300px) scaleY(1); transform-origin: bottom; }
+    80% { transform: translateY(300px) scaleY(1); transform-origin: bottom; }
+    100% { transform: translateY(300px) scaleY(0); transform-origin: bottom; text-shadow: -180px 0 0 var(--clr), 180px 0 0 var(--clr); }
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1200px) { body { font-size: 16px; } }
+@media screen and (max-width: 768px) { body { font-size: 14px; } }
+@media screen and (max-width: 480px) { body { font-size: 12px; } }
