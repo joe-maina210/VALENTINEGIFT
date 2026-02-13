@@ -91,7 +91,29 @@ body {
     100% { transform: translateY(300px) scaleY(0); transform-origin: bottom; text-shadow: -180px 0 0 var(--clr), 180px 0 0 var(--clr); }
 }
 
+/* Make cloud width responsive */
+.container .cloud {
+    width: 60%; /* bigger on small screens */
+}
+
+/* Adjust h2 font size on small screens */
+@media screen and (max-width: 480px) {
+    .container .cloud h2 {
+        font-size: 1.2em;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 10px;
+    }
+}
+
+/* Ensure drops scale for small screens */
+.container .cloud .drop {
+    font-size: 0.8em;
+}
+
+
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 1200px) { body { font-size: 16px; } }
 @media screen and (max-width: 768px) { body { font-size: 14px; } }
 @media screen and (max-width: 480px) { body { font-size: 12px; } }
+
